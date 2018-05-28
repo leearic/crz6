@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>妹子图-爱妹子-Coser-漂亮妹子</title>
+
+    <link rel="stylesheet" href="/static/front/css/common.css"/>
+    <link rel="stylesheet" href="/static/front/css/index.css"/>
+    <link rel="stylesheet" href="/static/front/css/templatePic.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/front/css/style.css">
+    <script src="/static/front/js/lib/jquery-3.2.1.js"></script>
+   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="g-container" style="width: 100%;height: auto;">
+
+    <div class="midbar-wrapper">
+        <div class="midbar-inner g-c">
+            <img src="/static/front/images/index.png" class="inner-logo left"/>
+            <!--搜索框-->
+            <div class="s-form left">
+                <div class="s-form-center">
+                    <input type="text" placeholder="请输入关键字" class="s-input"/>
+                    <a class="s-search"><img src="/static/front/images/ic_serach_pub.png"/></a>
+                </div>
+                <ul class="s-search-lianxiang">
+                    <li class="search-item">
+                        <a href="#">
+                            <i class="search-no search-no-1">1</i>
+                            <span class="search-txt">Coser</span>
+                        </a>
+                    </li>
+                    <li class="search-item">
+                        <a href="#">
+                            <i class="search-no search-no-2">2</i>
+                            <span class="search-txt">妹子图</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+    <!--列表新闻导航-->
+    <div class="news-nav-zhanwei" style="width: 100%;height: 40px;box-shadow: 0 0 2px 2px #d9d9d9;background-color: #FFFFFF;z-index: 10;">
+        <div style="width: 1000px;margin: 0 auto;height: 40px;text-align: center">
+            <ul class="g-c hidden-nav-ul" style="width: auto;height:40px;display: inline-block;">
+                <li class="news-li-active"><a href="#">全部</a></li>
+                <li><a href="#">Coser</a></li>
+                <li><a href="#">妹子图</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="news-nav" style="width: 1000px;margin: 15px auto">
+        <ul class="g-c">
+            <li class="news-li-active"><a href="#">全部</a></li>
+            <li><a href="#">Coser</a></li>
+            <li><a href="#">妹子图</a></li>
+
+        </ul>
+    </div>
+    <div class="pic-item-all">
+        <div class="pic-item-inner">
+            <ul class="g-c pic-item-ul" >
+
+
+
+
+            {% for coser in cosers %}
+
+                <li>
+                    <a href="#">
+                        <div class="pic-item-cont">
+                            <img src="/static/front/full/{{ coser.url}}" class="tem_pic_one js-lightBox" data-group='group-1' />
+                            <!--<span>15图</span>-->
+                        </div>
+                        <p class="pic-item-text">{{ coser.title}}</p>
+                        <p class="extra">
+                            <!--<span>星云比特&nbsp;⋅</span>-->
+                            <!--<span> 170评论&nbsp;⋅</span>-->
+                            <!--<span>2017-04-21 07:49</span>-->
+                        </p>
+                    </a>
+                </li>
+
+            {% endfor %}
+
+
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    <div class="row">
+   <div class="center-block" style="width:200px">
+
+   <ul class="pagination">
+
+	     {% if cosers.has_previous %}
+       <li> <a class='paginator' title='上一页' href='/page/{{ cosers.previous_page_number }}'>上一页</a></li>
+    {% endif %}
+	   {% if cosers.has_next %}
+
+    <li> <a class='paginator' title='下一页' href='/page/{{ cosers.next_page_number }}'>下一页</a></li>
+    {% endif %}
+
+            <!---->
+            <!---->
+	<!--<li><a href="#">5</a></li>-->
+	<!--<li><a href="#">&raquo;</a></li>-->
+</ul>
+   </div>
+</div>
+
+
+
+
+
+  <!-- Footer
+================================================== -->
+<footer class="bs-docs-footer">
+  <div class="container">
+    <!--<ul class="bs-docs-footer-links">-->
+      <!--<li><a href="https://github.com/twbs/bootstrap">GitHub 仓库</a></li>-->
+      <!--<li><a href="../getting-started/#examples">实例</a></li>-->
+      <!--<li><a href="http://www.youzhan.org">优站精选</a></li>-->
+      <!--<li><a href="../about/">关于</a></li>-->
+    <!--</ul>-->
+
+    <p>Designed and built with all the love in the world by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://twitter.com/fat" target="_blank">@fat</a>. Maintained by the <a href="https://github.com/orgs/twbs/people">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
+
+    <p>本项目源码受 <a rel="license" href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>开源协议保护，文档受 <a rel="license" href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a> 开源协议保护。</p>
+
+  </div>
+</footer>
+
+
+
+
+
+
+
+</div>
+<script src="/static/front/js/index.js"></script>
+<script src="/static/front/js/templatePic.js"></script>
+
+    <script type="text/javascript" src='/static/front/js/lightBox.js'></script>
+<script>
+    let $newsNav = $('.news-nav');
+    let $newsNavTop = $newsNav.offset().top;
+    let $newsNavHeight = $newsNav.outerHeight(true);
+    let $newsNavZhanWei = $('.news-nav-zhanwei');
+    let windowBarTop;
+    $(window).scroll(function (e) {
+      windowBarTop = $(document).scrollTop();
+      if(windowBarTop >= $newsNavTop+$newsNavHeight){
+        $newsNavZhanWei.css({'display':'block','position':'fixed','top':'0'});
+      }else{
+        $newsNavZhanWei.css('display','none');
+      }
+    });
+</script>
+
+
+   <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $.LightBox({speed:500})
+    });
+    </script>
+
+
+</body>
+</html>
